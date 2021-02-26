@@ -6,9 +6,9 @@ class L
 	}
 	L(int i, double j)
 	{
-		System.out.println("L(int,double)");
+		System.out.println("L(int value,double value)");
 	}
-	public static void main(String[]args)
+	public static void main(String[] args)
 	{
 		L obj = new L(10, 20);
 		System.out.println("-----");

@@ -5,7 +5,7 @@ class D
 	D()
 	{
 		System.out.println("D()");
-		i = 10;
+		this.i = 10;
 	}
 	public static void main(String[]args)
 	{
