@@ -1,0 +1,6 @@
+interface Z
+{
+	Z()
+	{
+	}
+}
