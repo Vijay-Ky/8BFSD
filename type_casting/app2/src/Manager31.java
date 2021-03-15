@@ -36,5 +36,6 @@ class Manager31
 		test(a3);
 		System.out.println("----------------------------");
 		test(a4);
+		System.out.println("----------------------------");
 	}
 }

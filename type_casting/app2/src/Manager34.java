@@ -38,9 +38,9 @@ class Manager34
 		//obj2.i=1;//13
 		//obj2.j=1;//14
 		x1.i = 1;//15
-		//x1.j=1;//16
+		//x1.j = 1;//16
 		x2.i = 1;//17
-		//x2.j=1;//18
+		//x2.j = 1;//18
 		y1.i = 1;//19
 		y1.j = 1;//20
 		System.out.println("done");
