@@ -1,5 +1,3 @@
-package app5;
-
 class C
 {
 	public static void main(String[] args) throws CloneNotSupportedException

@@ -1,5 +1,3 @@
-package app4;
-
 class B
 {
 	protected void finalize() throws Throwable
@@ -13,8 +11,8 @@ class M2
 	{
 		B b1 = new B();
 		b1 = null;
-		System.gc();
-		//Runtime.getRuntime().gc();
+		//System.gc();
+		Runtime.getRuntime().gc();
 		System.out.println("end of the program");
 	}
 }

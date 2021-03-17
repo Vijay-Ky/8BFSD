@@ -1,5 +1,3 @@
-package app5;
-
 class H
 {
 	int x;

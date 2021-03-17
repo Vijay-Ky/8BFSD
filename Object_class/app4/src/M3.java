@@ -1,5 +1,3 @@
-package app4;
-
 class Util
 {
 	static void sleep(long millis)

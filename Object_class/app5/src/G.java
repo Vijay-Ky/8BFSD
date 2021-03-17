@@ -1,5 +1,3 @@
-package app5;
-
 class G implements Cloneable
 {
 	int i;

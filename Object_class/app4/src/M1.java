@@ -1,9 +1,8 @@
-package app4;
-
+//GC
 //finalize method
 class A
 {
-	 protected void finalize() throws Throwable
+	protected void finalize() throws Throwable
 	{
 		System.out.println("from finalize");
 	}

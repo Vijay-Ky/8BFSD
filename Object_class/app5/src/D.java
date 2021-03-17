@@ -1,5 +1,3 @@
-package app5;
-
 class D implements Cloneable
 {
 	public static void main(String[] args) throws CloneNotSupportedException

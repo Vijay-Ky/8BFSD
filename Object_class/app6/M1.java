@@ -1,5 +1,3 @@
-package app6;
-
 //reflection api
 class A 
 {
