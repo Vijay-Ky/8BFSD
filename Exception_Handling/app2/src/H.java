@@ -16,7 +16,7 @@ class H
 		}
 		catch (NumberFormatException ex)
 		{
-				System.out.println("NFE");
+			System.out.println("NFE");
 		}
 		System.out.println("main end");
 	}

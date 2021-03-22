@@ -10,8 +10,10 @@ class Z4
 		}
 		catch (ArithmeticException ex)
 		{
+			System.out.println(ex);
 			ex = null;
+			System.out.println(ex);
 		}
-		System.out.println("end of main:" + ex);
+		System.out.println("end of main");
 	}
 }

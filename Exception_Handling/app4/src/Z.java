@@ -6,7 +6,7 @@ public class Z
 		try
 		{
 			System.out.println(2);
-			System.exit(0);
+			System.exit(100);
 			System.out.println(3);
 		}
 	    catch(ArithmeticException ex)
