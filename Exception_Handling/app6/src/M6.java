@@ -9,7 +9,7 @@ class M6
 	{
 		test2(); 
 	}
-	static void test2() //throws ArithmeticException
+	static void test2() throws ArithmeticException
 	{
 		int i = 10 / 0;//compiler doest care in case of unchecked exception 
 	}

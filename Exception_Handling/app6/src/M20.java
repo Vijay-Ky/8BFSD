@@ -1,15 +1,15 @@
 class A
 {
-	A() throws ClassNotFoundException
+	A() //throws ClassNotFoundException
 	{
 		//Class.forName("");
-		/*try
+		try
 		{
 			Class.forName("");
 		}
 		catch (ClassNotFoundException ex)
 		{
-		}*/
+		}
 	}
 }
 class M20 

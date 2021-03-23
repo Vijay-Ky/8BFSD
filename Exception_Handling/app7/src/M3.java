@@ -13,7 +13,7 @@ class M3
 			//we can also keep this statement inside the try-catch
 			//bt dont provide the try-catch bcz its meanigless
 			//we are only terminating the flow bcz something went wrong
-			throw new ArithmeticException("age should be less than or equal to 0");
+			throw new ArithmeticException("age should be greater than 0");
 		}
 		System.out.println(2);
 	}

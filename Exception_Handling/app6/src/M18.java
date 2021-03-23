@@ -6,7 +6,7 @@ class M18
 		test2();//not require any try catch or throws
 		System.out.println("done");
 	}
-	static void test1() //throws ClassNotFoundException
+	static void test1() throws ClassNotFoundException
 	{
 		//can be empty in case of methods bt not in case of try
 	}

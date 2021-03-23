@@ -9,7 +9,7 @@ class M4
 		int age = sc.nextInt();
 		if(age <= 0)
 		{
-			throw new AgeIsNegativeException("some reson");
+			throw new AgeIsNegativeException("some reason");
 		}
 		System.out.println(2);
 	}

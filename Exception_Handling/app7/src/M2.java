@@ -6,7 +6,7 @@ class M2
 		System.out.println(1);
 		if(true)
 		{
-			throw new ClassNotFoundException("some message why do we want to terminate the flow");	
+			throw new ArithmeticException("some message why do we want to terminate the flow");	
 		}
 		System.out.println(2);
 	}

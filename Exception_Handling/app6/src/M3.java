@@ -18,7 +18,6 @@ class M3
 	static void test() //throws ClassNotFoundException
 	{
 		//Class.forName("");	
-		
 		try
 		{
 			Class.forName("");	
