@@ -1,5 +1,3 @@
-package app1;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.ListIterator;
@@ -34,7 +32,8 @@ public class Manager36 {
 /*
  * -ListIterator interface extends Iterator Interface.
  -listIterator() method is available in List interface.
- -Unlike Enumeration and Iterator ListIterator interface is bidirectional cursor i,e either we can move forward or backward direction.
+ -Unlike Enumeration and Iterator ListIterator interface is bidirectional cursor i,e 
+ either we can move forward or backward direction.
 - Using ListIterator we can perform read, remove, replacement, addition of new objects.
 -while calling list.listIterator() we get an object of type Listiterator.
 -inside ListIterator() method using anonymous inner class to implement ListIterator interface,

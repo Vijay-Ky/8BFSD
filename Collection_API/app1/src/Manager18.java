@@ -10,6 +10,7 @@ public class Manager18 {
 		list.add(29);
 		list.add(2);
 		list.add(25);
+		list.add(20);
 		System.out.println(list);
 		Comparator ctr = Collections.reverseOrder();//sort element in reverse order.
 		Collections.sort(list, ctr);
@@ -19,7 +20,7 @@ public class Manager18 {
 	}
 }
 /*
- * to sort in the reverse order or in the descending order use Collections.sort(list.reverseOrder())
+ * to sort in the reverse order or in the descending order use Collections.reverseOrder()
  * First sort method accept one argument and expecting every element should be comparable type.
 . Second sort method accept two arguments and the second argument should be comparator.
  * */

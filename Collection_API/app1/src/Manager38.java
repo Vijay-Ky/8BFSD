@@ -1,5 +1,3 @@
-package app1;
-
 import java.util.ArrayList;
 import java.util.ListIterator;
 
@@ -12,13 +10,15 @@ public class Manager38 {
 		list.add(40);
 
 		ListIterator it = list.listIterator();
-
+		it.add(50);
 		while (it.hasNext()) {
 			System.out.println(it.next() + ",");
 		}
-		list.add(50);
-		System.out.println();
-		System.out.println("-----");
+		it.add(50);
+		while (it.hasNext()) {
+			System.out.println(it.next() + ",");
+		}
+		System.out.println("---------");
 
 	}
 }

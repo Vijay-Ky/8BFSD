@@ -1,5 +1,3 @@
-package app1;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -20,5 +18,7 @@ public class Manager34 {
 	}
 }
 /*
- * he java.util.concurrentmodificationexception is an error in Java. The error occurs when the iterator is traversing a list, and a command is used to change an element’s value during that traversal.
+ * he java.util.concurrentmodificationexception is an error in Java.
+ The error occurs when the iterator is traversing a list,
+ and a command is used to change an element’s value during that traversal.
  * */

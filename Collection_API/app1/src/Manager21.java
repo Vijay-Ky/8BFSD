@@ -1,5 +1,3 @@
-package app1;
-
 import java.util.ArrayList;
 
 class A {
@@ -7,6 +5,10 @@ class A {
 
 	A(int i) {
 		this.i = i;
+	}
+	public String toString()
+	{
+		return "" + i;
 	}
 	// toString method is not overrided.
 }

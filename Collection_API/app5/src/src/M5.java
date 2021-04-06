@@ -18,16 +18,15 @@ class M5
 		for(Object key : keys)
 		{
 
-			System.out.println(key + ":" + map1.get(key));
+			System.out.println(key);
 		}
-		System.out.println(keys);
 		System.out.println("-------------------------");
 
 		Object value;
 		for(Object key : keys)
 		{
 			value = map1.get(key);
-			System.out.println(key + " : " + value);
+			System.out.println(value);
 		}
 	}
 }

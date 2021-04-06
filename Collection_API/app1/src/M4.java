@@ -18,7 +18,7 @@ public class M4
 		System.out.println();
 		System.out.println("----");
 
-		int[] arr = new int[] {10, 20, 30, 40, 50 };
+		int[] arr = new int[] {10, 20, 30, 40, 50};
 		for (int i : arr)
 		{
 			System.out.print(i + ",");

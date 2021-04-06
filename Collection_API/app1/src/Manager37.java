@@ -1,5 +1,3 @@
-package app1;
-
 import java.util.ArrayList;
 import java.util.ListIterator;
 
@@ -12,7 +10,8 @@ public class Manager37 {
 		list.add(40);
 
 		ListIterator it = list.listIterator();
-		list.add(50);//use it.add(50) to avoid CuncurrentModificationException
+		//list.add(50);//use it.add(50) to avoid CuncurrentModificationException
+		 it.add(50);
 		while (it.hasNext()) {
 			System.out.println(it.next() + ",");
 		}

@@ -1,7 +1,6 @@
-package app1;
-
 import java.util.ArrayList;
 import java.util.Collections; //collections is utility class to use short element;
+import java.util.Comparator; //collections is utility class to use short element;
 
 class C {
 	int i;
@@ -11,7 +10,7 @@ class C {
 	}
 
 	public String toString() {
-		return "i=" + i;
+		return " i = " + i;
 	}
 
 }
@@ -24,9 +23,16 @@ public class Manager23 {
 		list.add(new C(4));
 		list.add(new C(10));
 		list.add(new C(8));
+		/*list.add(9);
+		list.add(19);
+		list.add(4);
+		list.add(10);
+		list.add(8);*/
+
 		System.out.println(list);
-		Collections.sort(list);
+		//Collections.sort(list);
 		System.out.println(list);
+		//System.out.println(ctr);
 	}
 }
 /*

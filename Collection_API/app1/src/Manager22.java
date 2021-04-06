@@ -1,10 +1,9 @@
-package app1;
 import java.util.ArrayList;
 class B{
 	int i;
 	B(int i)
 	{
-		this.i=i;
+		this.i = i;
 	}
 	public String toString()//user defined toString method
 	{

@@ -20,7 +20,6 @@ public static void main(String[] args) {
 		System.out.println("-----");
 		list1.retainAll(list2);//list2 element in same as list1 other element are remove from list1
 		System.out.println(list1);
-		System.out.println(list2);
 	}
 }
 
