@@ -19,7 +19,7 @@ class M1
 	  //reading all the the properties from a properties file
 	public static void main(String[] args)
 	{
-		//String sqld = "DROP TABLE BOOK1";
+		String sqld = "DROP TABLE BOOK1";
 		String sql = "CREATE TABLE BOOK1(ID NUMBER, TITLE VARCHAR2(90), AUTHOR VARCHAR2(90), PRICE NUMBER)";
 		try(Connection con = Util.getConnection();
 			Statement stmt = con.createStatement())

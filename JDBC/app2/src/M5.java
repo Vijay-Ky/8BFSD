@@ -8,7 +8,7 @@ class M5
 		Statement stmt = con.createStatement();
 		//we are selecting only two columns
 		//giving aliasing name for the columns
-		String sql = "SELECT id p_id, age person_age FROM PERSON";
+		String sql = "SELECT ID P_ID, AGE PERSON_AGE FROM PERSON";
 		//for select command we need to call executeQuery() of statement object
 		//executeQuery returns resultset
 		//we need to supply select cmd to the executeQuery()

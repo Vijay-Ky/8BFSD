@@ -19,7 +19,7 @@ class M2
 	  //reading all the the properties from a properties file
 	public static void main(String[] args)
 	{
-		String sql = "INSERT INTO BOOK1 VALUES(1, 'JAVA', 'VIJAY', 500)";
+		String sql = "INSERT INTO BOOK1 VALUES(8, 'C', 'YASHWANTH KANETKAR', 300)";
 		try(Connection con = Util.getConnection();
 			Statement stmt = con.createStatement())
 		{

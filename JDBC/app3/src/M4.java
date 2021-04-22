@@ -6,10 +6,10 @@ import java.sql.Connection;//interface
 import java.sql.Statement;//interface
 import java.sql.ResultSet;//interface
 import java.sql.ResultSetMetaData;//interface
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.FileReader;//class
+import java.io.IOException;//class
 //to load file contents to properties object
-import java.util.Properties;
+import java.util.Properties;//class
 class M4 
 {
 	//no need of keeping throws Exception bcz of keeping try and catch

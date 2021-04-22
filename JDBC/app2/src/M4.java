@@ -7,7 +7,7 @@ class M4
 		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
 		Statement stmt = con.createStatement();
 		//we are selecting only two columns
-		String sql = "SELECT id, age FROM PERSON";
+		String sql = "SELECT ID, AGE FROM PERSON";
 		//for select command we need to call executeQuery() of statement object
 		//executeQuery returns resultset
 		//we need to supply select cmd to the executeQuery()
@@ -26,7 +26,7 @@ class M4
 			//column indexes are starting from 1
 			//first record column id index
 			System.out.print(rs.getString(1) + ", ");
-			//first record coulumn name index
+			//first record coulumn age index
 			System.out.print(rs.getString(2) + ", ");
 			System.out.println();
 		}

@@ -19,9 +19,9 @@ class M6
 	  //reading all the the properties from a properties file
 	public static void main(String[] args)
 	{
-		String sql1 = "INSERT INTO BOOK1 VALUES(5, 'ANGULAR', 'ADAM', 700)";
-		String sql2 = "INSERT INTO BOOK1 VALUES(6, 'GIT', 'KATE', 800)";
-		String sql3 = "INSERT INTO BOOK1 VALUES(7, 'SPRING', 'NICK', 900)";
+		String sql1 = "INSERT INTO BOOK1 VALUES(14, 'ANGULAR', 'ADAM', 700)";
+		String sql2 = "INSERT INTO BOOK1 VALUES(15, 'GIT', 'KATE', 800)";
+		String sql3 = "INSERT INTO BOOK1 VALUES(16, 'SPRING', 'NICK', 900)";
 		Connection con = null;		
 		try
 		{

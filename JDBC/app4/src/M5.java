@@ -19,9 +19,9 @@ class M5
 	  //reading all the the properties from a properties file
 	public static void main(String[] args)
 	{
-		String sql1 = "INSERT INTO BOOK1 VALUES(3, 'SPRING', 'MANU', 600)";
-		String sql2 = "INSERT INTO BOOK1 VALUES(4, 'HIBERNATE', 'KUMAR', 600)";
-		String sql3 = "INSERT INTO BOOK1 VALUES(5, HADOOP', 'SWETHA', 600)";
+		String sql1 = "INSERT INTO BOOK1 VALUES(10, 'Datastructures', 'padma reddy', 600)";
+		String sql2 = "INSERT INTO BOOK1 VALUES(11, 'Algorithms', 'padma reddy', 600)";
+		String sql3 = "INSERT INTO BOOK1 VALUES(12, System software', 'some author', 600)";
 		
 		try(Connection con = Util.getConnection();
 			Statement stmt = con.createStatement())

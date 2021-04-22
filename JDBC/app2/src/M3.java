@@ -19,7 +19,7 @@ class M3
 		while(rs.next())
 		{
 			//any datatype of the column we can read in the form of String
-			//getString() is applicable for any datatype of the column
+			//getString()	is applicable for any datatype of the column
 			//we can supply column indexes rather than column name
 			//column indexes are starting from 1
 			//first record column id index

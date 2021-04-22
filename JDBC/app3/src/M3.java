@@ -42,7 +42,7 @@ class M3
 			int cols = rsmd.getColumnCount();
 			for (int i = 1; i <= cols; i++)
 			{
-				System.out.println(rsmd.getColumnName(i) + "\t");
+				System.out.print(rsmd.getColumnName(i) + "\t");
 			}
 			System.out.println();
 			System.out.println("--------------------");
@@ -50,7 +50,7 @@ class M3
 			{
 				for (int i = 1; i <= cols; i++)
 				{
-					System.out.println(rs.getString(i) + "\t");
+					System.out.print(rs.getString(i) + "\t");
 				}
 				System.out.println();
 			}

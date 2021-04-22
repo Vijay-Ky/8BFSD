@@ -1,0 +1,45 @@
+<!-- recommended to write all tags in lower case.
+<web-app> is the root tag. in the body of the root tag keep servlet tag-->
+<web-app>
+	
+	<servlet>
+		<!--for the lengthy class name we are giving aliasing name-->
+		<!--whitespaces are allowed before and after the identifier(s1)-->
+		<servlet-name>s1</servlet-name>
+		<servlet-class>com.aptech.HelloServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<!--now we dont have to mention the servlet name just mention s1  bcz of mapping-->
+		<servlet-name>s1</servlet-name>
+		<!--url pattern content should be starting with '/' followed by any identifier -->
+		<!--now hello servlet is assigned to s1-->
+		<!--now HelloServlet can be refered from s1-->
+		<!--s1 is mapping to one url called hello-->
+		<!--same s1 can be mapped to any no. of urls-->
+		<url-pattern>/hello</url-pattern>
+		<url-pattern>/HelloServlet</url-pattern>
+		<url-pattern>/FirstServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<!--for the lengthy class name we are giving aliasing name-->
+		<!--whitespaces are allowed before and after the identifier(s2)-->
+		<servlet-name>s2</servlet-name>
+		<servlet-class>com.aptech.Servlet2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<!--now we dont have to mention the servlet name just mention s2  bcz of mapping-->
+		<servlet-name>s2</servlet-name>
+		<!--url pattern content should be starting with '/' followed by any identifier -->
+		<!--now Servlet2 can be refered from s2-->
+		<!--s2 is mapping to one url called /s2 and /Servlet2 and /abc and / xyz-->
+		<!--same s2 can be mapped to any no. of urls-->
+		<!--but every url-pattern should be unique in across the servlet mapping-->
+		<!--but by using any url you can access the Servlet2 in the browser-->
+		<url-pattern>/s2</url-pattern>
+		<url-pattern>/Servlet2</url-pattern>
+		<url-pattern>/abc</url-pattern>
+		<url-pattern>/xyz</url-pattern>
+	</servlet-mapping>
+
+</web-app>
