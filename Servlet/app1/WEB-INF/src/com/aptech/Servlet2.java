@@ -31,4 +31,4 @@ web.xml file
 */
 
 
-//http://localhost:9090/app1/Servlet2?param1=123&firstName=vijay
+http://localhost:9090/Servlet1?param1=123&firstName=vijay

@@ -1,0 +1,904 @@
+http://tomcat.apache.org/
+http://localhost:9090
+
+
+D:\Developmentsoftwares\Tomcat9\webapps 
+in the above folder only we have to develop
+we have to develop all web applications
+1st - create app1 folder (also called project folder)
+
+- we can develop html,css,javascript files in app1 folder
+- even jsp file also in the same location
+
+- develop test1.html in the app1
+- http://localhost:9090/app1/test1.html
+
+-how to develop servlet
+we require additional directory structure.
+- inside app1 create onother folder called WEB-INF every character in the upper case
+- in the WEB-INF folder create a classes folder this should be same name and create
+src folder this can be with any name its for java files.
+-create deployment descriptor its XML file in the WEB-INF level
+
+- write java program
+D:\Developmentsoftwares\Tomcat9\webapps\app1\WEB-INF\src>javac -d ../classes com/aptech/*.java
+-we need describe in the deployment descriptor
+
+-after web.xml develoment restart the server
+
+http://localhost:9090/app1/hello
+
+- to identify the mistake in web.xml just press cntr + b it will show full structure if it is proper
+
+
+http://localhost:9090/app1/s2
+http://localhost:9090/app1/Servlet2
+http://localhost:9090/app1/xyz
+http://localhost:9090/app1/abc
+
+-supplying values through query string.
+-after ? any no. of input parameters.
+- '&' is the seperator between the inputs
+http://localhost:9090/app1/abc?param1="Hello"&firstName="vijay"
+
+- we can make a call to the servlet from html also
+
+- we dont need to restart the server if we just develop and call servlet from html.
+
+http://localhost:9090/app1/test2.html
+
+- all html files should be in the project folder.
+
+
+http://localhost:9090/app1/test3.html
+
+
+- use PrintWriter to write back anything to the browser through SOP we cant
+
+- to find out where this messages are printing come to 
+ tomcat9->logs-> 
+                 we can see the stdouts day wise it is creating
+
+- tomcat is a server that only requires class files not the java files.
+
+
+-------------------------------------------
+
+http://localhost:9090/app2/test1.html
+
+
+-without developing servlet, in the html if you give and submit you get 404 error 
+
+-after html,css,javascript client side dev is done
+
+
+---------------------WAR Dev-------------------------------------
+1. JAR is nothing but zipped format of java.
+2. In java to develop a kind of zip, we can use a JAR.
+3. Java archieve is nothing but zipped format in java.
+4. For core java appliations we will be using jar
+   once the core java appliation got over, then we take that core java
+   application content and making a jar file, and that jar file is sending
+   to the customer, customer will make use of the jar file, we can run jar
+   file using java command.
+5. in case of web application, in place of jar we will be using
+   WAR(WebArchive).
+   That WAR file we can run in any J2EE complient server.
+   it can be tomcat, jboss, web logic, web spear etc.
+6. WAR is also called as portable format of the web application.
+7. jar cf app5.war *
+   i,e create file name, complete content of the current directory,
+   includin the sub directories, extension .war can be aslo .jar
+8. deploy that in webapps folder.
+9. then restart the tom cat server, it will be creating one folder
+    you get complete content of war file.
+10. myapp>jar cf D:\Developmentsoftwares\Tomcat9\webapps\app6.war *
+   this also possible, absolute path
+
+------------------development with eclipse---------------
+1.we need javaee eclipse for this
+2. we need j2ee edition
+3. we can develop dynamic web application 
+4. before creating dynamic web app check if tom cat running outside or not
+5. create a new dynamic web project
+- eclipse doesnt have any target runtime environments- no tomcat,jre, database
+- chosse run time envronemnt- tomcat 9
+- if you dont get those lists then its not jee eclipse.
+-choose the folder name of tomcat installation
+-select dynamic web module version to 2.5
+- till now we have developed module version of 2.5
+-eclipse is using different directory structure for dynamic web application
+its eclipse specific,
+- every java program(any java pgm, servlet also)
+  you should develop inside the java resources->src folder 
+-under web content only we should develop, html, css, js, image, jsp files
+-inside webcontent->web-inf->lib we need to place all third party
+ jar files, we dont update build-path.
+- inside eclipse build path is only for core java projects
+- for all web apps we need to copy explicitely jar files into the lib
+  folder.
+-in the web-inf we have web.xml by default design view click source
+-diplay-name tag is providing a name to display
+-welcome-file-list - we are getting a readymade web.xml file.
+-this directory structure is specific to eclipse not universal.
+- previous development without eclipse, that is universal directory 
+  structure for web app development.
+-every j2ee complient servers expecting the directory structure like 
+ this not eclipse structure.
+-develop html file in web-content folder
+- just run with some content of html directly, no need of 
+configuring tomcat once again.
+-html, js, css, image, and jsp should be inside the web-content folder.
+-now develop simple servlet inside servlet
+Servlet1 with package com.aptech
+- click next it shows url mapping as /Servlet1
+-eclipse chooses class name itself as URL pattern
+-then uncheck dopost and doget. check service
+- in the web.xml you will get optional tags
+<description></description>
+    <display-name>Servlet1</display-name>
+-just keep these two statements inside the service method
+PrintWriter out = response.getWriter();
+		out.println("Hello to all from Servlet1");
+-just run. no need of restarting the server.
+-we dont require to mention the port number to call servlet in browser.
+just run
+- develop Servlet2 and html file and call the servelet from html
+just run the html file and click the link
+- develop another html file with simple form copy the action value and
+develop Servlet3
+- not url-mapping should not be the default one select edit and 
+paste that url-pattern 
+-override(check) only service method and uncheck doget, dopost
+-come to html and run the file, by restarting the tomcat
+you get empty form with submit just click submit you get the servlet call o/p
+
+-now we will develop the servlet which interacts with the db
+-creating another project
+-target runtime you dont have to configure once again
+ - target runtime will be configured only once in the workspace
+  - dynamic web module version keep 2.5 only
+
+
+
+
+-------------------Input to servlets----------------
+----reading the data from the browser-------------
+1. form data
+- String[] firstName = request.getParameterValues("firstName"); this method return the string
+array
+
+- make changes in the reg2.html
+now its multiselection drop down
+<select name="education" multiple>
+
+
+- if in the form method= 'post' then query string will not be generating, returns null
+-query string will not be generarating while form is submitting through post will get NPE 500 
+  error internal server error
+
+-------------constants
+- not only we can read form data in the servlet but we can read constants also 
+
+-configuring constants to entire application
+
+--------------servlet life cycle-------------
+-for the first request object will be created with no-arg constructor.
+-then init method and service method
+-every time you refresh the browser that is the next request and we get service method 
+-for the first request only constructor,init,servlet9.service then only servlet9.service for
+every another request.
+-go to the servers tab and right click and select stop then you will see destroy method executes
+-service method only responsible for serving the customer request.
+-in every servlet there should be no-arg constructor. otherwise we get error
+500 internal server error, instantiation exception
+-while manually starting the server object wont be created, while making the first request then
+the servlet object is creating. this is reffrred to as lazy loading.
+-we can create the object initially by manual by keeping <load-on-startup>1</load-on-startup>
+in <servlet> tag.
+-number on load-on-startup says the order which one should execute first.
+-we should not give the number as 0 or same number bcz server will execute it randomly.
+
+-----architecture---------
+servlet-api.jar
+-------------
+1.javax.servlet.*
+2.javax.servlet.http.*
+
+
+1. javax.servlet.*
+------------------------
+   1.Servlet
+   2.ServletConfig
+   3.ServletContext
+   4.ServletRequest
+   5.ServletResponse
+   6.GenericServlet
+   7.RequestDispatcher
+
+2. javax.servlet.http.*
+-------------------------
+   1.HttpServlet
+   2.HttpServletRequest
+   3.HttpServletResponse
+   4.HttpSession
+   5.Cookie
+
+---------DoGet and DoPost----------
+- just develop the DoGet in the servlet
+now we are making the call to servlet through Get
+-server calls service method only but we didnt override service method 
+when sever calls service method it will read method type if method type is get 
+it will call DoGet method
+
+-suppose we only overrided doPost directly making a call to servlet through browser
+if we didnt override the doget we get error by default it will call doget.
+
+-always advisable to develop servlet by using doGet and doPost
+
+-one is returning form to the customer and second receiving form from the customer.
+-getting filled form from the customer doGet method composing the form and returning the form
+to the customer.
+-doPost method receving filled form from the customer and processing that data.
+
+
+
+---------------Init Methods-----------------------------
+Servlet is an interface
+-Generic servlet is an abstract class
+-Http servlet is also an abstract class
+-Then we are developing our HelloServlet
+-Servlet contains life-cycle methods
+  1.init()
+  2.service()
+  3.destroy()
+  - These are inheriting to GenericServlet
+  - in the GenericServlet init method and destroy methods got implemented
+    but not service method.
+  - service method leaving to the protocol specific classes like HttpServlet
+  - in the HttpsServlet service method got implemented by considering
+    http protocol methods like get and post. 
+    for get they develped doGet method and post they developed doPost method
+- in the servlet interface there is an argument init method that is inheriting
+  to GenericServlet. in the GenericServlet init method got implemented.
+  this is how init method got implemented.(see word doc)
+
+
+- in the GenericServlet there is an attribute of ServletConfig type
+  -same getting initialized through argument init method
+  -argument init method taking argument as a Servletconfig
+  -same is initializing to the global attribute.
+  -at last it is calling no-arg init method.
+  -it is newly incorporated method in the GenericServlet
+
+- all most all the methods of GenericServlet are using global attribute config
+
+- if argument init method not executed then config will be null
+  while calling return config.geInitParameter(name); you will get NullPointerException
+ - this config is used in all the remaining methods of GenericServlet
+
+-argument init method from the GenericServlet should execute at any cost
+ bcz argument init method initializing global attribute, because that global
+ attribute is used in almost all the methods of GenericServlet. if it is not
+ initialized then we get NullPointerException
+
+-Same argument init method is inheriting to HttpServlet
+ in the HttpServlet it is not overrided and same gets inherited to our 
+ HelloServlet. 
+ - In the HelloServlet we should not override argument init method
+   if we are overriding argument init method then GenericServlet attribute 
+   will not be initalizing. if it is not initialized then the methods got 
+   iniherited from GenericServlet to HelloServlet those cant be used.
+   if we try to use them we get NullPointerException.
+-server will call by default init method of GenericServlet in the HelloServlet
+
+
+------demonstration----
+-develop a servlet and override init method and doGet method
+-protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String s1 = getInitParameter("");
+		System.out.println("done");
+	}
+-you get NullPointerException
+- just comment the argument init method
+-or keep super.init(config)
+
+public void init(ServletConfig config) throws ServletException {
+		super.init(config);
+	}
+--Interview question why do we use super.init(config) while overriding init method
+
+
+-only one time init method is executing
+
+- so instead of inheriting arg-init method just override no-arg init method
+ this is the best way.
+ public void init() throws ServletException {
+		System.out.println("init()");
+	}
+- server will always call arg-init method not no-arg init method.
+
+- two things here initializing servlet arhitecture(hierarchy)
+  in the GenericServlet there are so many methods which are using config
+  that config should be initalized. we can call it as API initialization
+
+- Server is supplying servlet config to the init method that servlet config
+  is used by several method of GenericServlet.
+  whaterver object sending by the server that should be assigned to global
+  attribute of GenericServlet. then most of the built-in methods works properly.
+  most of the methods are depending on the object which is sending by the server.
+  sever knows about every information about our servlet context.
+  once that got initialized then only we should look for application 
+  specific initialization.
+
+two types of initialization
+1. default or built-in initialization.
+2. then application specific initialization.
+
+conclusion: here dont override argumet-init method if you did without fail 
+you should keep super.init(config) otherwise NullPointerException
+-instead of that go for no-arg method
+-server wont call no-arg init method straight-away
+ server first calls arg init method by supplying ServletConfig object to argument
+ init method.
+
+
+-for every servlet server sending ServletConfig object.
+ its like one to one for one servlet one ServletConfig object will be supplied by the server.
+ that ServletConfig will be having all run-time parameters including 
+ server run-time environment.
+-server responsible to ServletConfig object to servlet object through arg-init method
+ as soon as servlet execution got over immediately init method calling by the server
+-server sending servlet-config object to init method
+
+- ServletConfig object will be containing servlet specific information.
+- ServletConfig object not only contains servlet specific information
+ it is also containing server information.
+ - server responsibility to send a server information and servlet specific 
+ information to a particular servlet.
+- for a servlet while calling init method it is supplying servlet config object
+- in the ServletConfig object it is incorporating ServletContext object also
+  ServletContext object is global to entire application.
+  ServletContext object containing server information and global information	
+  for our application.
+-ServletContext is a global object which is available in entire application.
+for one application one ServletContext object. that servlet context object
+contains application information and even server information.
+whenerver server sending servlet config object to a servlet it is incorporating
+servlet specific information and also reference of the ServletContext.
+
+- every ServletConfig object having reference of ServletContext but for 
+entire application only one ServletContext.
+-wrt servlet config it is specific to a servlet. for every servlet
+one servlet config object but for entire application one servlet context object
+
+-------interviewer will ask difference b/w servlet config and servlet context--------
+
+- first constructor and init method will be called then after we are calling argument init method
+- we can directly initialize in the constrctor instead of the argument init method
+then why do we need this argument init method.
+- init method is a callback method, automatically server is calling
+  through init method only. servlet is getting the main information about run-time context
+  where this servlet object is running that information is getting through
+  servlet config object. that servlet config object is sending to the init method
+  we are not calling init method. server only calling init method. we are
+  not calling constructor, server only creating object. at the time of object
+  creating constructor is executing but by the time of executing constructor
+  servlet doesnt have run-time information even servlet specific configuration.
+  first object is creating then only init method is calling while creating an
+  object it doesnt have servlet config object, after object creation then
+  calling init method. 
+  so inside a constructor body we cant use getInitParamter() we get NullPointerException
+  bcz by the time of creating an object constructor is executing by the time
+  GenericServlet config is null only.
+  in the constructor body you cant use any inherited methods.
+  we can use inherited methods once GenericServlet config got initialized.
+  that is getting initialized through argument constructor. after argument
+  constructor use the no-arg constructor. if we are implementing anything
+  in the no-arg constructor that is executing after argument init method.
+  initialize in the no-arg init method that no-arg init method is executing
+  after argument init method GenricServlet config gets initialized.
+  by the time of executing servlet constructor GenericServlet config is the 
+  null we cant use any inherited methods but by the time of calling no-arg
+  init method GenericServlet config got initialized. then we can use every
+  inherited method
+
+- in the servlet architecture init methods are specificaly designed in order to 
+initialize some built-in execution then only we can go for our application
+specific initialization.
+in the servlets developement we will not be using no-arg constructor at-all
+in order to initialize. go for no-arg init method, we can also go for 
+argument init method but we need to keep super.init(config).
+the best way is to initialize application specific initialization in the
+servlets developement no-arg init method. not the constructor body not even
+argument init method. compare to constructor body argument init method is more suitable
+just we need to keep super.init(config) statment.
+so dont use constructors at all in case of web application developements.
+- that is why in the servlet if we develop constructor overloading we wont
+be using that.
+- we can develop any no. of constructors but server only using no-arg constructor
+we are not creating object to the servlet. if we create we can use any constructor.
+but server only creating the object. while server is creating the object
+it is using no-arg constructor.
+- so please ensure every time servlet should have a no-arg constructor.
+if not we will be getting an exception why bcz server creating an object
+to servlet class by using no-arg constructor only. if that is not available
+then we get runtime exception.
+
+
+---------------------DISPATCHING-------------
+-----REQUEST DISPATCHER-----------
+- It is an interface. available in javax.servlet package.
+  if any member is available in javax.servlet package it is protocol independent.
+  it is not depending on any protocol. its same in every protocol.
+
+- in this interface there are two methods available.(two ways of using request dispatcher)
+  forward
+  include
+ 
+- by using request dispatcher we can forward a request or we can include
+  target resource output
+  
+
+  demonstration
+  three things
+  only servlet1 not servlet 2 in the address bar
+  1. browser address bar http://localhost:9090/app11/Servlet1?firstName=abc&lastName=xyz
+  2. in the browser body only servlet2 content not the servlet1 content
+  3. console o/p
+
+
+  process
+  1. brower making a request to servlet1 by submitting a form with firstName and lastName
+  2. inside servlet1 we are reading firstName, lastName, then composed fullName then
+     we are storing that fullName inside the request object. then we are using request
+     dispatcher to dispatch current request to servlet2.
+  3. servlet2 not forwarding this. after execution of servlet2 it is sending
+     response back to servlet1
+ 4. then inside servlet1 whaterver remaining content is there those will be executing.
+    then sending a response back to browser.
+ Note: in the browser address bar only servlet1 is visible why because
+       browser made a call to servlet1 only. servlet1 internally made a 
+       call to servlet2.
+       http://localhost:9090/app10/Servlet1?firstName=abc&lastName=xyz
+       browser dosnt know about this.
+
+ - inside servlet1 we used forward technic then in the servlet2 last 
+   resource out.println message only sending back to the browser.
+   whenever we use forward
+- whenever we use forward only last resource out.println is sending back to 
+  the browser.
+- it is maily used for role based development
+  ex: servlet1 is performing business logic and servlet2 performing presentation logic
+
+- inside servlet2 we can read form data as a parameter we can read
+   results as a attribute. because of same request object is going to servlet2
+   inside that object first name is there in the form of parameter.last name
+   is there in the form of parameter, and results is fullname results is there
+   in the form of attribute. that also available in the servlet2
+
+ - instead of developing business and presentation logic in the same 
+   servlet we can divide into 2.
+
+ - by using request dispatcher we can dispatch to any other servlet or any
+   other html file. we can also dispatch to any jsp.
+
+
+- while using rd.include(r,r) we get both servlet out.println message
+   including servlet2 output in the servlet1 output
+   - whaterver output is composed by servlet 2 the same including in the servlet1
+   -depending on the requirement we can go for either forward or include.
+- its like inline develpment servlet2 is acting as a inline of servlet1
+- now servlet2 can reused in any other servlet wherever servlet2 services
+  is required
+
+
+  forward- rollbased development
+  include - inline or reusability
+
+
+-RequestDispatcher is a server side technic bcz browser doent know about the dispatching
+
+
+
+---------SendRedirect-----------
+1.similar to request dispacther there is an another technic
+
+
+
+
+-------------
+1. request dispatcher it is only within the web application
+but in case of send redirect in across the web applications of the same server.but another application also
+should run in the same server.
+
+
+----------------Session Management------------------
+--what is the need-----------------------------
+-any type of web application requires session management.
+-no matter which technology we are using to develop our web application.
+-because we are using HTTP protocol it is stateless protocol so we require a managin session
+ explicitely.
+
+
+ -first form data data not visible to the second form
+
+ -to maintain user session explicitely there are 4 approaches available
+ 1. hidden form fields
+ 2. url rewriting
+ 3. cookies
+ 4. HttpSession
+
+ ------------hidden form fields-----------------------
+ -programmer maintaining session management through hidden field
+
+
+  ------------url rewriting-----------------------
+  through querystring we are sending data whatever required.
+  when you are supplying query string method should be post
+
+
+  when we use get it generates query string
+
+
+  -------------------cookies------------------------
+  -cookie is a small piece of information.
+  -implementing session management using cookies.
+  -cookie is an object which is created by server and maintained by browser.
+
+
+HttpSession
+---------------------------
+1. by default it is working based on cookies.
+
+
+--------------
+1.Servlet runs in the tom cat container.
+2.Tomcat takes care of creating objects and intializing.
+3.Takes care of creating request and response object also.
+4.every class is provided by tomcat
+----------------------------
+
+HTTP Session 
+--------------------
+-The HttpSession object is used for session management.
+A session contains information specific to a particular user 
+across the whole application. When a user enters into a website 
+(or an online application) for the first time HttpSession is obtained
+via request.getSession(), the user is given a unique ID to identify 
+his session. This unique ID can be stored into a cookie or in a request parameter.
+
+-The HttpSession stays alive until it has not been used for more than 
+the timeout value specified in tag in deployment descriptor file( web.xml).
+The default timeout value is 30 minutes, this is used if you don’t specify
+the value in tag. This means that when the user doesn’t visit web application
+time specified, the session is destroyed by servlet container. The subsequent
+request will not be served from this session anymore, the servlet container 
+will create a new session.
+
+
+This is how you create a HttpSession object.
+
+protected void doPost(HttpServletRequest req,
+    HttpServletResponse res)
+    throws ServletException, IOException {
+        HttpSession session = req.getSession();
+}
+
+
+You can store the user information into the session object by using 
+setAttribute() method and later when needed this information can be
+fetched from the session. This is how you store info in session. Here
+we are storing username, emailid and userage in session with the attribute
+name uName, uemailId and uAge respectively.
+
+
+session.setAttribute("uName", "vijay");
+session.setAttribute("uemailId", "myemailid@gmail.com");
+session.setAttribute("uAge", "20");
+This First parameter is the attribute name and second is the attribute value.
+For e.g. uName is the attribute name and vijay is the attribute 
+value in the code above.
+
+
+TO get the value from session we use the getAttribute() method of HttpSession interface. Here we are fetching the attribute values using attribute names.
+
+String userName = (String) session.getAttribute("uName");
+String userEmailId = (String) session.getAttribute("uemailId");
+String userAge = (String) session.getAttribute("uAge");
+
+
+Methods of HttpSession
+public void setAttribute(String name, Object value): Binds the object with a name and stores the name/value pair as an attribute of the HttpSession object. If an attribute already exists, then this method replaces the existing attributes.
+
+public Object getAttribute(String name): Returns the String object specified in the parameter, from the session object. If no object is found for the specified attribute, then the getAttribute() method returns null.
+
+public Enumeration getAttributeNames(): Returns an Enumeration that contains the name of all the objects that are bound as attributes to the session object.
+
+public void removeAttribute(String name): Removes the given attribute from session.
+
+setMaxInactiveInterval(int interval): Sets the session inactivity time in seconds. This is the time in seconds that specifies how long a sessions remains active since last request received from client.
+
+
+getSession
+HttpSession getSession(boolean create)
+Returns the current HttpSession associated with this request or, if there is no current session and create is true, returns a new session.
+If create is false and the request has no valid HttpSession, this method returns null.
+
+To make sure the session is properly maintained, you must call this method before the response is committed. If the container is using cookies to maintain session integrity and is asked to create a new session when the response is committed, an IllegalStateException is thrown.
+
+Parameters:
+create - true to create a new session for this request if necessary; false to return null if there's no current session
+Returns:
+the HttpSession associated with this request or null if create is false and the request has no valid session
+
+Filters
+-------------------
+1. filters are for pre-execution or post-execution or both.
+2. before calling servlet if something needs to be executed or
+   after calling servlet if something needs to be executed or both.
+   then we can assign a filter to servlet.
+    * for the filters also no-arg constructor is mandatory.
+     * server is creating object to filter by using reflection-api. 
+     * every filter is having auto-load on startup.
+   - same filter can be assigned to any no. of servlets 
+   - filter can be mapped to any web resource.Servlet,JSP,HTML
+   -for the same resource any no.of filters can be assigned.
+
+dispatcher types
+---------------------------
+- for filter also we can configure constants.
+- we can also read application specific constants.
+
+Backup programs
+-----------------------
+filter1
+----
+package com.aptech;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+/**
+ * Servlet Filter implementation class Filter1
+ */
+public class Filter1 implements Filter {
+	
+	private FilterConfig config;
+
+    /**
+     * Default constructor. 
+     */
+    public Filter1() {
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see Filter#destroy()
+	 */
+	public void destroy() {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
+	 */
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		String s1 = config.getInitParameter("Con1");
+		String s2 = config.getInitParameter("Country");
+		
+		//reading application specific parameters
+		ServletContext context = config.getServletContext();
+		String s3 = context.getInitParameter("p1");
+		String s4 = context.getInitParameter("url");
+		
+		PrintWriter out = response.getWriter();
+		
+		//filter specific constants
+		out.println("from filter1: " + s1 + "<br/>");
+		out.println("from filter1: " + s2 + "<br/>");
+		
+		//application specific constants
+		out.println("from filter1: " + s3 + "<br/>");
+		out.println("from filter1: " + s4 + "<br/>");
+		
+		chain.doFilter(request, response);
+	}
+
+	/**
+	 * @see Filter#init(FilterConfig)
+	 */
+	public void init(FilterConfig fConfig) throws ServletException {
+		config = fConfig;
+	}
+
+}
+
+----------------
+servlet1
+------
+package com.aptech;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Servlet1
+ */
+public class Servlet1 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Servlet1() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			String s1 = null;
+			int i = s1.length();
+			System.out.println(s1);
+	}
+}
+
+Servlet2
+--------------------
+package com.aptech;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Servlet2
+ */
+public class Servlet2 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Servlet2() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		out.println("some message");
+	}
+
+}
+-----------------
+web.xml
+----------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>FilterDispatcherTypes</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>Servlet1</display-name>
+    <servlet-name>Servlet1</servlet-name>
+    <servlet-class>com.aptech.Servlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet1</servlet-name>
+    <url-pattern>/Servlet1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Servlet2</display-name>
+    <servlet-name>Servlet2</servlet-name>
+    <servlet-class>com.aptech.Servlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet2</servlet-name>
+    <url-pattern>/Servlet2</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>Filter1</display-name>
+    <filter-name>Filter1</filter-name>
+    <filter-class>com.aptech.Filter1</filter-class>
+    <init-param>
+      <description></description>
+      <param-name>Con1</param-name>
+      <param-value>Driver</param-value>
+    </init-param>
+    <init-param>
+      <description></description>
+      <param-name>Country</param-name>
+      <param-value>India</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>Filter1</filter-name>
+    <servlet-name>Servlet1</servlet-name>
+  </filter-mapping>
+  <context-param>
+    <param-name>p1</param-name>
+    <param-value>test</param-value>
+  </context-param>
+  <context-param>
+    <param-name>url</param-name>
+    <param-value>oracleUrl</param-value>
+  </context-param>
+  
+  <error-page>
+  <exception-type>java.lang.NullPointerException</exception-type>
+  <location>/Servlet2</location>
+  </error-page>
+</web-app>
+  
+  -----------------------
+  //pre
+		System.out.println("Filter1-doFilter started");
+		PrintWriter out = response.getWriter();
+		out.println("Filter1-doFilter started<br/>");
+		
+		chain.doFilter(request, response);
+		
+		//post
+		System.out.println("Filter1-doFilter end");
+		out.println("Filter1-doFilter end<br/>");
+
+
+----------------------------------------
+System.out.println("from Servlet1");
+PrintWriter out = response.getWriter();
+out.println("from Servlet1<br/>");
+------------------------------------------------
+FilterDispatcherTypes
+part1 - Reading filter specific constants
+part2 - Reading application specific constants
+part3 - Assigning one servlet to every NullPointerException
+-use the external browser for getting message
+-default dispatcher type is a request. still we can choose request
+part4 - ERROR dispatcher type
+-filter mapped to servlet2. only mapped for only ERROR requests of servlet2
+part5 - FORWARD dispatcher type
+we are making, whenever FORWARD to servlet2 from other servlet filter will execute.	
+part6 - INCLUDE dispatcher type
+we are making, whenever INCLUDE to servlet2 from other servlet filter will execute.	
+if you give a call to servlet2 straightaway filter wont execute.
+give call from servlet1 you get filter output. 
+
+-------------------------------------------------------------------
+Servlet Listeners
+------------------------
+- suppose attributes added, removed, replaced in servlet context or session or request
+the event will be generated. that we can listen using different listeners. which are 
+available in the servlet
+- 

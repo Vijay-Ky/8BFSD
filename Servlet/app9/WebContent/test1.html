@@ -1,0 +1,57 @@
+<a href="Servlet3">Servlet3</a>
+
+<!-- by default form submission also method is get -->
+<form action="Servlet3">
+	<input type="submit" value="call servlet3"/>
+</form>
+<hr/>
+
+<!-- explicitley specifying method=get
+get and post can be either in lower case or upper case -->
+<form action="Servlet3" method="get">
+	<input type="submit" value="call servlet3"/>
+</form>
+<hr/>
+<!-- throws exception bcz we didnt override post method -->
+<form action="Servlet3" method="post">
+	<input type="submit" value="call servlet3"/>
+</form>
+
+<!-- you will get Method Not Allowed -->
+<a href="Servlet4">Servlet4	</a>
+<hr/>
+<!-- this is default form throws exception bcz we didnt 
+override post method HTTP Status 405 – Method Not Allowed-->
+<form action="Servlet4" >
+	<input type="submit" value="call servlet4"/>
+</form>
+<hr/>
+<!-- same exception bcz we didnt 
+override post method HTTP Status 405 – Method Not Allowed-->
+<form action="Servlet4" method="GET">
+	<input type="submit" value="call servlet4" />
+</form>
+<hr/>
+<form action="Servlet4" method="POST">
+	<input type="submit" value="call servlet4"/>
+</form>
+
+
+
+
+<!-- both methods got implemented doGet and doPost -->
+<a href="Servlet4">Servlet5</a>
+<hr/>
+
+<form action="Servlet5" >
+	<input type="submit" value="call servlet5"/>
+</form>
+<hr/>
+
+<form action="Servlet5" method="GET">
+	<input type="submit" value="call servlet5" />
+</form>
+<hr/>
+<form action="Servlet5" method="POST">
+	<input type="submit" value="call servlet5"/>
+</form>

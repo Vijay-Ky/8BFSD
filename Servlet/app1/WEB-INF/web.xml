@@ -17,8 +17,6 @@
 		<!--s1 is mapping to one url called hello-->
 		<!--same s1 can be mapped to any no. of urls-->
 		<url-pattern>/hello</url-pattern>
-		<url-pattern>/HelloServlet</url-pattern>
-		<url-pattern>/FirstServlet</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
