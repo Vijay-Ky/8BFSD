@@ -11,7 +11,7 @@ class M6
 			void test2()
 			{
 				System.out.println("AIC.test2()");
-				test3();
+				test3();//we can from inside
 			}
 			void test3()
 			{
