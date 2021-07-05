@@ -1,0 +1,1 @@
+<b>Todays Date:<%= new java.util.Date() %> </b>

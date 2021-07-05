@@ -1,0 +1,42 @@
+CREATE TABLE STUDENT(ID INT,
+                     FIRST_NAME VARCHAR(90),
+                     LAST_NAME VARCHAR(90),
+                     AGE INT,
+                     EMAIL VARCHAR(90));
+                                                 
+INSERT INTO STUDENT VALUES(1, 'VIJAY', 'RAO', 33, 'V@GMAIL.COM');                                                 
+INSERT INTO STUDENT VALUES(2, 'KIRAN', 'RAO', 34, 'K@GMAIL.COM');
+INSERT INTO STUDENT VALUES(3, 'BHANU', 'PRAKASK', 24, 'B@GMAIL.COM');
+INSERT INTO STUDENT VALUES(4, 'SUMAN', 'RAI', 25, 'D@GMAIL.COM');
+INSERT INTO STUDENT VALUES(5, 'MANU', 'ANAND', 27, 'M@GMAIL.COM');
+
+
+
+implicit objects	data types
+----------------	----------
+1. request		HttpServletRequest
+2. response		HttpServletResponse
+3. out			JspWriter
+4. application		ServletContext
+5. config		ServletConfig
+6. session		HttpSession
+7. page			Object (this)
+8. pageContext		PageContext
+9. exception		Throwable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

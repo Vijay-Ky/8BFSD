@@ -1,0 +1,28 @@
+<web-app>
+	<context-param>
+		<param-name>con1</param-name>
+		<param-value>hello</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>s1</servlet-name>
+		<jsp-file>/test24.jsp</jsp-file>
+		<init-param>
+			<param-name>test</param-name>
+			<param-value>100%</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>s1</servlet-name>
+		<url-pattern>/abc</url-pattern>	
+	</servlet-mapping>
+
+
+    <jsp-config>
+    	<jsp-property-group>
+    		<url-pattern>*.jsp</url-pattern>
+    		<el-ignored>true</el-ignored> 
+			<scripting-invalid>true</scripting-invalid>			
+    	</jsp-property-group>    	
+    </jsp-config>
+
+</web-app>
