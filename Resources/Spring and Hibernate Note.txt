@@ -1,0 +1,16 @@
+Practice Activity #1 - Inversion of Control with XML Configuration
+Practice Activity #1 - Inversion of Control with XML Configuration   
+
+ 
+
+Define a new implementation for the Coach interface. You can use whatever sport you would like.
+
+Reference your new implementation in the Spring config file.   
+
+Test your application to verify you are retrieving information from your new Coach implementation.
+
+    
+
+You can check your code against the solution. The solution is available here: 
+
+- http://www.luv2code.com/downloads/udemy-spring-hibernate/solution-practice-activities.zip      
