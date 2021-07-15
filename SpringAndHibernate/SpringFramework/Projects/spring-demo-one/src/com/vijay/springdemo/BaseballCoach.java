@@ -2,6 +2,10 @@ package com.vijay.springdemo;
 
 public class BaseballCoach implements Coach{
 
+//	BaseballCoach()
+//	{
+//		
+//	}
 	//1. define a private field for dependency
 	private FortuneService fortuneService;
 	
