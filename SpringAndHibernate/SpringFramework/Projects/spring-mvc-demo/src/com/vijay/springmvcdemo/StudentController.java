@@ -25,7 +25,10 @@ public class StudentController {
 	{
 		
 		System.out.println("first name of the student: " + theStudent.getFirstName() +
-				"last name of the student: " + theStudent.getLastName());
+				"\n" + "last name of the student: " + theStudent.getLastName()
+				+ "\n" + "Country of the student: " + theStudent.getCountry()
+				+ "\n" + "Fav Lang of the student: " + theStudent.getFavoriteLanguage()
+				);
 		
 		return "student-confirmation";
 	}

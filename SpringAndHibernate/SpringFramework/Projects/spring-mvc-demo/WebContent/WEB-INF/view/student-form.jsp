@@ -17,9 +17,24 @@ First Name: <form:input path="firstName"/>
 Last Name: <form:input path="lastName"/>
 <br/>
 <br/>
+Country:
+<form:select path="country">
+<%-- <form:option value="India" label="India"/>
+<form:option value="US" label="US"/>
+<form:option value="UK" label="UK"/>
+<form:option value="Singapore" label="Singapore"/> --%>
+<form:options items="${student.countryOptions}"/>
+</form:select>
+<br/>
+<br/>
+Favorite Language:
+Java <form:radiobutton path="favoriteLanguage" value="Java"/>
+C# <form:radiobutton path="favoriteLanguage" value="C#"/>
+Python <form:radiobutton path="favoriteLanguage" value="Python"/>
+Javascript <form:radiobutton path="favoriteLanguage" value="Javascript"/>
 <input type="submit" value="click here to submit"/>
 </form:form>
-
-
+<br/>
+<br/>
 </body>
 </html>

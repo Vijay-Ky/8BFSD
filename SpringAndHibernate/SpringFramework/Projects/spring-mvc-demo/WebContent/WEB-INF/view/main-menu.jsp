@@ -8,8 +8,8 @@
 </head>
 <body>
 <a href="hello/htmlForm">Click Me To show html form</a>
-
-
+<br/>
+<br/>
 <a href="student/showForm">Click here for the Registration of a student</a>
 </body>
 </html>

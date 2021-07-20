@@ -9,5 +9,12 @@
 <body>
 <h2>Student Confirmation Form</h2>
 Confirmed Student: ${student.firstName} ${student.lastName} 
+<br/>
+<br/>
+Country: ${student.country}
+
+<br/>
+<br/>
+Favorite Language: ${student.favoriteLanguage}
 </body>
 </html>
