@@ -28,8 +28,14 @@ public class StudentController {
 				"\n" + "last name of the student: " + theStudent.getLastName()
 				+ "\n" + "Country of the student: " + theStudent.getCountry()
 				+ "\n" + "Fav Lang of the student: " + theStudent.getFavoriteLanguage()
+				+ "\n" + "OS: " + theStudent.getOperatingSystems()
 				);
+		String[] values = theStudent.getOperatingSystems();
 		
+		for(String members : values)
+		{
+			System.out.println(members);
+		}
 		return "student-confirmation";
 	}
 }

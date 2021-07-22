@@ -32,6 +32,17 @@ Java <form:radiobutton path="favoriteLanguage" value="Java"/>
 C# <form:radiobutton path="favoriteLanguage" value="C#"/>
 Python <form:radiobutton path="favoriteLanguage" value="Python"/>
 Javascript <form:radiobutton path="favoriteLanguage" value="Javascript"/>
+<br/>
+<br/>
+Operating Systems:
+
+Windows <form:checkbox path="operatingSystems" value="Windows"/>
+Linux <form:checkbox path="operatingSystems" value="Linux"/>
+Mac <form:checkbox path="operatingSystems" value="Mac"/>
+Solaris <form:checkbox path="operatingSystems" value="Solaris"/>
+
+
+
 <input type="submit" value="click here to submit"/>
 </form:form>
 <br/>
