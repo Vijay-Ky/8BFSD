@@ -41,6 +41,10 @@ public class CustomerController {
 	{
 		System.out.println("Current value of First Name field: " + theCustomer.getFirstName());
 		System.out.println("Current value of Last Name field: " + theCustomer.getLastName());
+		
+		
+		System.out.println("Binding Result: " + theBindingResult);
+		
 		if(theBindingResult.hasErrors())
 		{
 			return "customer-form";
